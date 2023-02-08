@@ -28,6 +28,7 @@ const initializeDbAndServer = async () => {
 
 initializeDbAndServer();
 
+// Get Todo with query API 1
 app.get("/todos/", async (req, res) => {
   let data = null;
   let getTodosQuery = "";
@@ -122,7 +123,7 @@ app.post("/todos/", async (req, res) => {
 });
 
 // Update Todo API 4
-app.put("/todosxyz", async (req, res) => {
+app.put("/todos/:todoId/", async (req, res) => {
   const { todoId } = req.params;
 
   let requestForUpdate = req.body;
